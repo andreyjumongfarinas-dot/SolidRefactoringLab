@@ -2,7 +2,7 @@
 
 namespace SolidRefactoringLab
 {
-    // OCP: abstraction para sa lahat ng formatter
+    // Abstraction for all report formatters
     public interface IReportFormatter
     {
         void FormatReport();
@@ -32,7 +32,7 @@ namespace SolidRefactoringLab
         }
     }
 
-    // SRP: taga-generate lang ng report, walang alam sa pag-save
+    // Responsible only for generating the report
     public class ReportManager
     {
         private readonly IReportFormatter _formatter;
@@ -50,7 +50,7 @@ namespace SolidRefactoringLab
         }
     }
 
-    // SRP: taga-save lang ng file
+    // Responsible only for saving files
     public class ReportSaver
     {
         public void SaveToFile(string filename)
